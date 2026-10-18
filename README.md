@@ -34,6 +34,20 @@ sampctl build
 
 If successful, the compiled `gamemodes/main.amx` will be created.
 
+On Windows, run `build.cmd` to build through the local HTTP proxy at
+`127.0.0.1:10808`. The proxy variables apply only to that command. To restore
+dependencies through the same proxy from Command Prompt, run:
+
+```bat
+set "HTTP_PROXY=http://127.0.0.1:10808"
+set "HTTPS_PROXY=http://127.0.0.1:10808"
+sampctl ensure
+sampctl build dev
+```
+
+The official MySQL R41-4 include is kept in `legacy/a_mysql.inc` because the
+pinned source tag does not install it through sampctl.
+
 ---
 
 ## Step 2 — Set Up MySQL
